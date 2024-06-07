@@ -2,34 +2,43 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
+import Sidebar from "./Sidebar";
+import ring from "../assets/ring.png";
+import emp from '../assets/emp.png';
 
 
 const Home = () => {
   return (
     <>
-      <Navbar className="bg-body-primary">
+    <Sidebar/>
+      <Navbar className="bg-body-primary" style={{height : '10vh'}}>
         <Container>
-          <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
+          <Navbar.Brand href="#home"><img src={ring}  height={70} width={70} alt="" /></Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
-              Signed in as: <a href="#login">Mark Otto</a>
+              <img src={emp} height={30} width={30} style={{marginLeft : '10%'}} alt="" />
+              <h3 style={{color : '#721217' }}>Mr.Sanjay</h3>
             </Navbar.Text>
           </Navbar.Collapse>
         </Container>
       </Navbar>
       <Navbar
         style={{
-          backgroundColor: "pink",
+          backgroundColor: "#FFCFF1",
           height: "5vh",
           boxShadow: "3px 3px 3px 3px grey",
+          marginLeft : '5%'
+
         }}
       >
+
+        <div style={{marginLeft : '-15px'}}>
         <div
           style={{
             display: "flex",
             marginLeft: "9%",
-            backgroundColor: "purple",
+            backgroundColor: "FF007F",
             borderTopRightRadius: "50px",
           }}
         >
@@ -42,9 +51,11 @@ const Home = () => {
               height: "4.3vh",
               width: "110px",
               paddingLeft: "20px",
+              
+              
             }}
           >
-            <p style={{ margin: "auto" }}>customer</p>
+            <p style={{  }}>customer</p>
           </div>
           <div
             style={{
@@ -56,6 +67,8 @@ const Home = () => {
             }}
           >
             <p style={{ marginTop: "5px" }}>company</p>
+        </div>
+        
           </div>
         </div>
       </Navbar>
@@ -125,30 +138,31 @@ const Home = () => {
           </div>
         
         </div><br /> */}
-
+             <div style={{marginLeft : '10%'}}>
     <form action="form">
     <h3
             style={{ color: "#721217", fontSize: "20px", fontWeight: "bolder" }}
           >
             Personal details
-          </h3>{" "}
-          <hr />
+          </h3>
+          <hr /><br />
           <label htmlFor="Name" style={{ marginLeft: "30px" ,fontWeight :'bold' }}>
             Name*
           </label>
+          <select   style={{ marginLeft: "10%" ,border : '2px solid #721217' , width : '7vw'}}
+            placeholder="Title" >
+            <option value="title">Title</option>
+            <option value="title">Name</option>
+          </select>
+         
           <input
             type="text"
-            style={{ marginLeft: "30px" ,border : '2px solid #721217' , boxShadow : '1px 1px 1px 1px grey', width : '7vw'}}
-            placeholder="Title"
-          />{" "}
-          <input
-            type="text"
-            style={{ marginLeft: "30px" ,border : '2px solid #721217' ,width :'19vw' , boxShadow : '1px 1px 1px 1px grey'}}
+            style={{ marginLeft: "30px" ,border : '2px solid #721217' ,width :'19vw' , }}
             placeholder="First Name "
           />{" "}
           <input
             type="text"
-            style={{ marginLeft: "30px" ,border : '2px solid #721217' ,width : '29vw', boxShadow : '1px 1px 1px 1px grey' }}
+            style={{ marginLeft: "30px" ,border : '2px solid #721217' ,width : '29vw',  }}
             placeholder="Last Name "
           />
           <br /> <br />
@@ -157,33 +171,33 @@ const Home = () => {
           </label>
           <input
             type="date"
-            style={{marginLeft: "30px" ,border : '2px solid #721217' ,width :'10vw' , boxShadow : '1px 1px 1px 1px grey' }}
+            style={{marginLeft: "8%" ,border : '2px solid #721217' ,width :'10vw' ,  }}
             placeholder="Enter join date"
           />
           <br /> <br />
           <label htmlFor="number" style={{ marginLeft: "30px" , fontWeight : 'bold' }}>
             Contact no*
           </label>
-          <input
-            type="number"
-            style={{ marginLeft: "22px" ,border : '2px solid #721217' ,width :'19vw' , boxShadow : '1px 1px 1px 1px grey' }}
-            placeholder="contact number"
-          />
+          <select   style={{ marginLeft: "6.7%" ,border : '2px solid #721217' , width : '19vw'}}
+            placeholder="Contact no" >
+            <option value="title">Contact no</option>
+            <option value="title">Number</option>
+          </select>
           <label htmlFor="number" style={{ marginLeft: "30px", fontWeight : 'bold' }}>
             Alternate no*
           </label>
-          <input
-            type="number"
-            style={{ marginLeft: "30px" ,border : '2px solid #721217' ,width :'19vw' , boxShadow : '1px 1px 1px 1px grey'}}
-            placeholder="alternate number"
-          />
+          <select   style={{ marginLeft: "30px" ,border : '2px solid #721217' ,  width : '19vw'}}
+            placeholder="Alternate no" >
+            <option value="title">Alternate no</option>
+            <option value="title">Number</option>
+          </select>
           <br /> <br />
           <label htmlFor="email" style={{ marginLeft: "30px" ,fontWeight : 'bold'}}>
             Email*
           </label>
           <input
             type="email"
-            style={{ marginLeft: "30px" ,border : '2px solid #721217' ,width :'19vw' , boxShadow : '1px 1px 1px 1px grey'}}
+            style={{ marginLeft: "10%" ,border : '2px solid #721217' ,width :'19vw' , }}
             placeholder="Enter email"
           />{" "}
           <br /> <br /> 
@@ -194,17 +208,18 @@ const Home = () => {
             Address details
           </h3>
           <hr />
+          <br />
           <label htmlFor="Name" style={{ marginLeft: "30px" ,fontWeight :'bold' }}>
             Address*
           </label>
           <input
             type="text"
-            style={{ marginLeft: "30px" ,border : '2px solid #721217' , boxShadow : '1px 1px 1px 1px grey', width : '67vw'}}
+            style={{ marginLeft: "8%" ,border : '2px solid #721217' ,  width : '67vw'}}
             placeholder="Address line no.1"
           /> <br /> <br />
           <input
             type="text"
-            style={{ marginLeft: "130px" ,border : '2px solid #721217' , boxShadow : '1px 1px 1px 1px grey', width : '67vw'}}
+            style={{ marginLeft: "16%" ,border : '2px solid #721217' ,  width : '67vw'}}
             placeholder="Address line no.2"
           />{" "}
           
@@ -212,32 +227,63 @@ const Home = () => {
          
           <br /> <br />
           <label htmlFor="number" style={{ marginLeft: "30px" , fontWeight : 'bold' }}>
-            Contact no*
+            Country*
           </label>
-          <input
-            type="number"
-            style={{ marginLeft: "22px" ,border : '2px solid #721217' ,width :'19vw' , boxShadow : '1px 1px 1px 1px grey' }}
-            placeholder="contact number"
-          />
+          <select   style={{ marginLeft: "8%" ,border : '2px solid #721217' ,  width : '17vw'}}
+            placeholder="Select Country" >
+            <option value="title">Select Country</option>
+            <option value="title">Name</option>
+          </select>
           <label htmlFor="number" style={{ marginLeft: "30px", fontWeight : 'bold' }}>
-            Alternate no*
+            Pin/Post code*
           </label>
           <input
             type="number"
-            style={{ marginLeft: "30px" ,border : '2px solid #721217' ,width :'19vw' , boxShadow : '1px 1px 1px 1px grey'}}
-            placeholder="alternate number"
+            style={{ marginLeft: "30px" ,border : '2px solid #721217' ,width :'19vw' }}
+            placeholder="Enter code"
           />
           <br /> <br />
-          <label htmlFor="email" style={{ marginLeft: "30px" ,fontWeight : 'bold'}}>
-            Email*
+          <label htmlFor="email" style={{ marginLeft: "35px" ,fontWeight : 'bold'}}>
+            State*
+          </label>
+          <select   style={{ marginLeft: "9.5%" ,border : '2px solid #721217' ,  width : '17vw'}}
+            placeholder="Title" >
+            <option value="title">Select state</option>
+            <option value="title">Name</option>
+          </select>
+          <label htmlFor="number" style={{ marginLeft: "30px", fontWeight : 'bold' }}>
+            Landmark*
           </label>
           <input
-            type="email"
-            style={{ marginLeft: "30px" ,border : '2px solid #721217' ,width :'19vw' , boxShadow : '1px 1px 1px 1px grey'}}
-            placeholder="Enter email"
-          />{" "}
-          <br /> <br /> 
+            type="number"
+            style={{ marginLeft: "60px" ,border : '2px solid #721217' ,width :'29vw' }}
+            placeholder="Landmark"
+          />
+          <br /> <br />
+
+          <label htmlFor="email" style={{ marginLeft: "30px" ,fontWeight : 'bold'}}>
+            Region/Area*
+          </label>
+          <select   style={{ marginLeft: "5.2%" ,border : '2px solid #721217' , width : '17vw'}}
+            placeholder="Title" >
+            <option value="title">select Region/area</option>
+            <option value="title">Name</option>
+          </select> <br /> <br /> 
+
+        <button style={{border : '1px solid #721217' , background : '#721217' , color : 'white' , padding : '5px' , width :'10vw' ,borderRadius : '7px' , marginLeft : '2.5%'}}>Add Address</button>
+         
+        <button style={{border : '1px solid #721217' , color : '#721217' , padding : '5px' , width :'7vw' ,borderRadius : '7px', marginLeft : '50%'}}>Cancel</button>
+
+        <button style={{border : '1px solid #721217' , background : '#721217' , color : 'white' , padding : '5px' , width :'7vw',marginLeft : '20px' ,borderRadius : '7px'}}>Save</button>
+
+        <br /> <br />
+        <hr />
+        
+
+
     </form>
+
+</div>
        
     </>
   );
